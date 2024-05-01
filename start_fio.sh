@@ -24,11 +24,11 @@ fi
 
 echo "" > system.cfg
 uname -av >> system.cfg
-echo "" > system.cfg
+echo "" >> system.cfg
 nvme list-subsys >> system.cfg
-echo "" > system.cfg
+echo "" >> system.cfg
 lscpu >> system.cfg
-echo "" > system.cfg
+echo "" >> system.cfg
 
 echo "fio ioengine=libaio direct=1 rw=randrw bs=${BS} rwmixread=50 iodepth=${iodepth} numjobs=${numjobs}" > fio.txt
 echo "fio --filename=/dev/${disk} --ioengine=libaio --direct=1 --size=200G --rw=randrw --refill_buffers --norandommap --randrepeat=0 --bs=${BS} --rwmixread=50 --iodepth=${iodepth} --numjobs=${numjobs} --runtime=${runtime} --group_reporting --name=${disk}_${BS}_read_write_test --output=/dev/null"
