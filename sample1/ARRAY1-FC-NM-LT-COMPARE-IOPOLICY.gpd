@@ -1,0 +1,7 @@
+set xdata time
+set xlabel "TIME (MIN:SEC)"
+set ylabel "INFLIGHT I/O"
+set title "ARRAY1-FC-NM-LT-COMPARE-IOPOLICY - ARRAY1-FC-numa,ARRAY1-FC-latency - \nfio ioengine=libaio direct=1 rw=randrw bs=32k rwmixread=50 iodepth=64 numjobs=40\nTop number of outstanding I/O = 2560"
+set terminal jpeg nointerlace giant size 1440,900 nocrop enhanced
+set output "ARRAY1-FC-NM-LT-COMPARE-IOPOLICY.jpeg"
+plot [*:*][0:2816] "data/ARRAY1-FC-numa-nvme1n1" using :1 with lines, "data/ARRAY1-FC-latency-nvme1n1" using :1 with lines,

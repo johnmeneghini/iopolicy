@@ -1,0 +1,3 @@
+setting iopolicy for nvme-subsys2 to latency 
+[ 8594.591304] nvme_activate_iopolicy: iopolicy latency enable 1 status 0 for subsysnqn nqn.1992-08.com.netapp:sn.2b82d9b13bb211ee8744d039ea989119:subsystem.SS104a
+[ 8594.605762] nvme_subsys_iopolicy_update: iopolicy changed from queue-depth to latency for subsysnqn nqn.1992-08.com.netapp:sn.2b82d9b13bb211ee8744d039ea989119:subsystem.SS104a

@@ -1,0 +1,1 @@
+fio ioengine=libaio direct=1 rw=randrw bs=32k rwmixread=50 iodepth=64 numjobs=40

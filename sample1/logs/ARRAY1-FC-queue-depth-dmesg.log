@@ -1,0 +1,3 @@
+setting iopolicy for nvme-subsys1 to queue-depth 
+[ 4005.445430] nvme_activate_iopolicy: iopolicy queue-depth enable 0 status 0 for subsysnqn nqn.1988-11.com.dell:powerstore:00:88b402df2d762AA7AF94
+[ 4005.458419] nvme_subsys_iopolicy_update: iopolicy changed from round-robin to queue-depth for subsysnqn nqn.1988-11.com.dell:powerstore:00:88b402df2d762AA7AF94

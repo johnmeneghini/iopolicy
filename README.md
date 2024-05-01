@@ -211,3 +211,21 @@ something like: `ARRAY2-TCP-queue-depth-nvme2n1-1`.  Esch controller specific
 data collection file is then used to create gnuplot script called
 "${filename}.gpd". This ".gpd" file is then used by gnuplot to generate at
 graph with the command `guplot -d ${filename}.gdp`.
+
+# Sample Data
+
+The following graphs are from the `sample1` directory that has been added to this
+repository as a demonstration of the output from these scripts.
+
+## Compare Outstanding IOs per Namespace
+
+ ![ARRAY1-FC-NM-RR-COMPARE-IOPOLICY](sample1/ARRAY1-FC-NM-RR-COMPARE-IOPOLICY.jpeg)
+ ![ARRAY1-FC-NM-QD-COMPARE-IOPOLICY](sample1/ARRAY1-FC-NM-QD-COMPARE-IOPOLICY.jpeg)
+ ![ARRAY1-FC-NM-LT-COMPARE-IOPOLICY](sample1/ARRAY1-FC-NM-LT-COMPARE-IOPOLICY.jpeg)
+
+## Compare Outstanding IOs per Controller
+
+ ![ARRAY2-TCP-round-robin.jpeg](sample1/ARRAY2-TCP-round-robin.jpeg)
+ ![ARRAY2-TCP-queue-depth.jpeg](sample1/ARRAY2-TCP-queue-depth.jpeg)
+ ![ARRAY2-TCP-latency.jpeg](sample1/ARRAY2-TCP-latency.jpeg)
+ ![ARRAY2-TCP-numa.jpeg](sample1/ARRAY2-TCP-numa.jpeg)

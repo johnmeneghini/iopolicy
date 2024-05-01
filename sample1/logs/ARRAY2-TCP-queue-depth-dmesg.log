@@ -1,0 +1,3 @@
+setting iopolicy for nvme-subsys2 to queue-depth 
+[ 7756.476934] nvme_activate_iopolicy: iopolicy queue-depth enable 0 status 0 for subsysnqn nqn.1992-08.com.netapp:sn.2b82d9b13bb211ee8744d039ea989119:subsystem.SS104a
+[ 7756.491931] nvme_subsys_iopolicy_update: iopolicy changed from round-robin to queue-depth for subsysnqn nqn.1992-08.com.netapp:sn.2b82d9b13bb211ee8744d039ea989119:subsystem.SS104a

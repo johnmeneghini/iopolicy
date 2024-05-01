@@ -1,0 +1,4 @@
+setting iopolicy for nvme-subsys6 to numa 
+[ 9655.015973] nvme_activate_iopolicy: iopolicy numa enable 0 status 0 for subsysnqn nqn.1988-11.com.dell:powerstore:00:88b402df2d762AA7AF94
+[ 9655.028335] nvme_subsys_iopolicy_update: iopolicy changed from numa to numa for subsysnqn nqn.1988-11.com.dell:powerstore:00:88b402df2d762AA7AF94
+[ 9993.962121] mlx5_core 0000:31:00.0: mlx5_fw_tracer_handle_traces:741:(pid 36567): FWTracer: Events were lost
