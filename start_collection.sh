@@ -25,6 +25,16 @@ display_help() {
 	echo ""
 }
 
+set_iopolicy() {
+	old_policy="$(cat /sys/class/nvme-subsystem/nvme-subsys${subsys_num}/iopolicy)"
+	echo "nvme-subsys${subsys_num}/iopolicy is ${old_policy}"
+	if [ "${old_policy}" != "$1" ]; then
+		echo "setting iopolicy for nvme-subsys${subsys_num} to $1 "
+		echo "$1" > /sys/class/nvme-subsystem/nvme-subsys${subsys_num}/iopolicy
+		sleep 5
+	fi
+}
+
 continue_step() {
     echo ""
         echo -n "Type any key to continue, e to exit: "
@@ -85,31 +95,32 @@ done
 ((jcount = j * count))
 
 echo ""
-echo "Be sure to start fio in a separate shell with start_fio.sh"
+set_iopolicy "${ADDR[0]}"
+
+continue_step
+sleep 1
+
+echo ""
+echo " Be sure to start fio in a separate shell with start_fio.sh"
 echo ""
 echo "     \"start_fio.sh <disk> <test> <block_size> <runtime> <numjobs> <iodepth>\""
 echo ""
-echo " e.g: \"$DIR/start_fio.sh $disk randread 4k $jcount 40 64\""
+echo "  e.g: \"$DIR/start_fio.sh $disk randread 4k $jcount 40 64\""
 echo ""
-echo "Monitor progress with iostat"
+echo " Monitor progress with iostat"
 echo ""
 echo " \"iostat -x ID \$(cat /proc/diskstats | fgrep $ctrl | fgrep $ns | awk '{print \$3}' | sort -r) 4\""
 
 continue_step
-
-sleep 2
+sleep 1
 
 mkdir -p logs
 
 for policy in "${ADDR[@]}"; do
 	dmesg -C
-	sleep 5
-	echo -n "nvme-subsys${subsys_num}/iopolicy is "
-	cat /sys/class/nvme-subsystem/nvme-subsys${subsys_num}/iopolicy
-	echo "setting iopolicy for nvme-subsys${subsys_num} to $policy "
-	echo "setting iopolicy for nvme-subsys${subsys_num} to $policy " > logs/${output}-${policy}-dmesg.log
-	echo "$policy" > /sys/class/nvme-subsystem/nvme-subsys${subsys_num}/iopolicy
-	sleep 20
+	sleep 2
+	set_iopolicy "${policy}"
+	echo ""
 	$DIR/collect_inflight-data.sh ${output}-${policy} $disk $count
 	sleep 10
 	dmesg >> logs/${output}-${policy}-dmesg.log

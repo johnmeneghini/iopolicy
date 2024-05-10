@@ -1,37 +1,56 @@
 # Linux NVMe iopolicy tests
 
-This repository contains scripts use to generage work loads and collect the
-data that can be used to analyze different nvme iopolicies used by the
-nvme-core mulipathing module.
+This repository contains scripts used to generage work loads and collect
+data that can be used to analyze different nvme multipath iopolicies.
+
+To change your nvme multipath policy you set the `/sys/class/nvme-subsystem`
+iopolicy parmeter. For example:
+
+```
+ # modinfo nvme_core | grep iopolicy
+ parm:           iopolicy:Default multipath I/O policy; 'numa' (default) , 'round-robin' or 'queue-depth'
+ cat /etc/
+
+ # cat /sys/class/nvme-subsystem/nvme-subsys0/iopolicy
+ numa
+
+ # echo "round-robin" > /sys/class/nvme-subsystem/nvme-subsys0/iopolicy
+
+ # cat /sys/class/nvme-subsystem/nvme-subsys0/iopolicy
+ round-robin
+```
 
 ## Prerequsites 
 
-Testbed setup should include an NVMe-oF multipath capabile target (a storage
+Testbed setup should include an NVMe-oF multipath capable target (a storage
 array or Linux soft-target) with at least 4 paths (the more paths the better)
-serving a single 200GB namespace, and a NVMe-oF host system. Best to use real
-hardware if you can.
+serving a single 400GB namespace and an NVMe-oF host system. It is best to use
+real hardware if you can.
 
 You will need root access to your host. All tests will be run from the `root`
-account on the NVMe-of host.
+account on the NVMe-oF host.
 
 Install the following packages on your NVMe-oF host:
 
 ```
-# on Centos-stream-9
+# on Fedora Centos-stream-9
 dnf config-manager --set-enabled crb
 dnf install -y epel-release epel-next-release
+dnf install -y fio sysstat gnuplot gimp
+
+# on Fedora
 dnf install -y fio sysstat gnuplot gimp
 ```
 
 ## Quickstart
 
-1. clone this repository on your test host. 
-2. log into the `root` account, you'll need two or three login sessions to run the test
-* one to run the fio command 
-* one to run the collection script
-* one to run the iostat command (if desired)
+1. clone this repository on your test host
+2. log into the *root* account, you'll need two or three login sessions to run the test
+ 1. one to run the fio command
+ 2. one to run the collection script
+ 3. one to run the iostat command (if desired)
 3. `cd` to a scratch subdirectory
-* both the fio script and the data collection scripts will create data collection files in your `pwd`
+* both the fio script and the data collection scripts will create data collection files in your *pwd*
 * it is recommended to create a new subdirectory for each test run
 4. run the `start_collection.sh` script and follow the directions.
 
