@@ -1,0 +1,11 @@
+[global] buffer_compress_percentage=80 startdelay=5 ioengine=libaio group_reporting direct=1 iodepth=256 numjobs=16 blocksize=512k runtime=120 time_based rw=read
+[nvme-read-512k-16x-1] filename=/dev/nvme0n1
+[nvme-read-512k-16x-2] filename=/dev/nvme0n2
+[nvme-read-512k-16x-3] filename=/dev/nvme0n3
+[nvme-read-512k-16x-4] filename=/dev/nvme0n4
+[nvme-read-512k-16x-5] filename=/dev/nvme0n5
+[nvme-read-512k-16x-6] filename=/dev/nvme0n6
+[nvme-read-512k-16x-7] filename=/dev/nvme0n7
+[nvme-read-512k-16x-8] filename=/dev/nvme0n8
+[nvme-read-512k-16x-9] filename=/dev/nvme0n9
+[nvme-read-512k-16x-10] filename=/dev/nvme0n10
