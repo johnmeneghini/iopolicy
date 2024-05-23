@@ -238,13 +238,9 @@ repository as a demonstration of the output from these scripts.
 
 ## Compare Outstanding IOs per Namespace
 
- ![ARRAY1-FC-NM-RR-COMPARE-IOPOLICY](sample1/ARRAY1-FC-NM-RR-COMPARE-IOPOLICY.jpeg)
- ![ARRAY1-FC-NM-QD-COMPARE-IOPOLICY](sample1/ARRAY1-FC-NM-QD-COMPARE-IOPOLICY.jpeg)
- ![ARRAY1-FC-NM-LT-COMPARE-IOPOLICY](sample1/ARRAY1-FC-NM-LT-COMPARE-IOPOLICY.jpeg)
+ ![ARRAY2-COMPARE-IOPOLICY](sample2/ARRAY2-COMPARE-IOPOLICY.jpeg)
 
 ## Compare Outstanding IOs per Controller
 
- ![ARRAY2-TCP-round-robin.jpeg](sample1/ARRAY2-TCP-round-robin.jpeg)
- ![ARRAY2-TCP-queue-depth.jpeg](sample1/ARRAY2-TCP-queue-depth.jpeg)
- ![ARRAY2-TCP-latency.jpeg](sample1/ARRAY2-TCP-latency.jpeg)
- ![ARRAY2-TCP-numa.jpeg](sample1/ARRAY2-TCP-numa.jpeg)
+ ![ARRAY2-round-robin](sample2/ARRAY2-round-robin.jpeg)
+ ![ARRAY2-queue-depth](sample2/ARRAY2-queue-depth.jpeg)

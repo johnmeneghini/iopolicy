@@ -1,0 +1,1 @@
+fio ioengine=libaio direct=1 rw=randread bs=4k iodepth=64 numjobs=40

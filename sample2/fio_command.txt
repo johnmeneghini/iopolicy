@@ -1,0 +1,1 @@
+fio --filename=/dev/nvme6n2 --ioengine=libaio --direct=1 --size=400G --rw=randread --refill_buffers --norandommap --randrepeat=0 --readonly --bs=4k --iodepth=64 --numjobs=40 --runtime=1800 --group_reporting --name=nvme6n2_4k_randread_test --output=/dev/null
