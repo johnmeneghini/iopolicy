@@ -1,0 +1,7 @@
+set xdata time
+set xlabel "TIME (MIN:SEC)"
+set ylabel "INFLIGHT I/O"
+set title "Compare-COMPARE-IOPOLICY - ARRAY1-round-robin,ARRAY1-queue-depth - \nfio libaio direct 1 4k read randread write randwrite iodepth 16 32 64 128 numjobs 8 16 32 64 \nTop number of outstanding I/O = 4237"
+set terminal jpeg nointerlace giant size 1440,900 nocrop enhanced
+set output "Compare-COMPARE-IOPOLICY.jpeg"
+plot [*:*][0:4660] "data/ARRAY1-round-robin-nvme11n3" using :1 with lines, "data/ARRAY1-queue-depth-nvme11n4" using :1 with lines,

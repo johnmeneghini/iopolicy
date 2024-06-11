@@ -1,0 +1,7 @@
+set xdata time
+set xlabel "TIME (MIN:SEC)"
+set ylabel "INFLIGHT I/O"
+set title "ARRAY1-queue-depth\nfio libaio direct 1 4k read randread write randwrite iodepth 16 32 64 128 numjobs 8 16 32 64 \nTop number of outstanding I/O = 1051"
+set terminal jpeg nointerlace giant size 1440,900 nocrop enhanced
+set output "ARRAY1-queue-depth.jpeg"
+plot [*:*][0:1156] "data/ARRAY1-queue-depth-tcp-nvme11c8n4-2" using :1 with lines, "data/ARRAY1-queue-depth-fc-nvme11c6n4-3" using :1 with lines, "data/ARRAY1-queue-depth-fc-nvme11c11n4-4" using :1 with lines, "data/ARRAY1-queue-depth-tcp-nvme11c10n4-5" using :1 with lines,

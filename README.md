@@ -238,9 +238,9 @@ repository as a demonstration of the output from these scripts.
 
 ## Compare Outstanding IOs per Namespace
 
- ![ARRAY2-COMPARE-IOPOLICY](sample2/ARRAY2-COMPARE-IOPOLICY.jpeg)
+ ![ARRAY1-COMPARE-IOPOLICY](sample3/Compare-COMPARE-IOPOLICY.jpeg)
 
 ## Compare Outstanding IOs per Controller
 
- ![ARRAY2-round-robin](sample2/ARRAY2-round-robin.jpeg)
- ![ARRAY2-queue-depth](sample2/ARRAY2-queue-depth.jpeg)
+ ![ARRAY1-round-robin](sample3/ARRAY1-round-robin.jpeg)
+ ![ARRAY1-queue-depth](sample3/ARRAY1-queue-depth.jpeg)
